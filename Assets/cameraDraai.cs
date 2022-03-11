@@ -5,7 +5,7 @@ using UnityEngine;
 public class cameraDraai : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 5;
+    public float speed;
     void Start()
     {
 
