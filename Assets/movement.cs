@@ -6,6 +6,7 @@ public class movement : MonoBehaviour
 {
     public Rigidbody rb;
     public bool canJump = false;
+    public float speed = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,9 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A))
+        transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.A))
+
         {
             transform.position += -transform.right * Time.deltaTime;
         }
