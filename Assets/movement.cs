@@ -31,20 +31,20 @@ public class movement : MonoBehaviour
             transform.position += transform.forward * Time.deltaTime;
         }
         
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    transform.position += -transform.forward * Time.deltaTime;
-        //}
-       // if (canJump == true && Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    rb.velocity = new Vector3(rb.velocity.x, 10, 0);
-       //  canJump = false;
+       // if (Input.GetKey(KeyCode.S))
+       // {
+       //     transform.position += -transform.forward * Time.deltaTime;
        // }
+       // if (canJump == true && Input.GetKeyDown(KeyCode.Space))
+       // {
+       //    rb.velocity = new Vector3(rb.velocity.x, 10, 0);
+       //     canJump = false;
+       //}
     }
 
     //private void OnCollisionEnter(Collision collision)
     //{
-            
-        //canJump = true;
-    }
+           
+     //   canJump = true;
+    //}
 }
