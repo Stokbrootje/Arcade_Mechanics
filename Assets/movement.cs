@@ -6,18 +6,16 @@ public class movement : MonoBehaviour
 {
     public Rigidbody rb;
     public bool canJump = false;
-    public float speed = 3;
-
-    // Start is called before the first frame update
+    public float speed = 10;
+    
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, Input.GetAxis("Vertical") * speed * Time.deltaTime);
         if (Input.GetKey(KeyCode.A))
 
         {
@@ -29,25 +27,16 @@ public class movement : MonoBehaviour
             transform.position += transform.right * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (canJump == true && Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position += transform.forward * Time.deltaTime;
+            rb.velocity = new Vector3(rb.velocity.x, 6, 0);
+            canJump = false;
         }
-        
-       // if (Input.GetKey(KeyCode.S))
-       // {
-       //     transform.position += -transform.forward * Time.deltaTime;
-       // }
-       // if (canJump == true && Input.GetKeyDown(KeyCode.Space))
-       // {
-       //    rb.velocity = new Vector3(rb.velocity.x, 10, 0);
-       //     canJump = false;
-       //}
-    }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-           
-     //   canJump = true;
-    //}
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        canJump = true;
+    }
 }
