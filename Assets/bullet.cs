@@ -5,6 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float life = 3;
+    public GameObject bulletPrefab;
 
 
 
@@ -15,7 +16,17 @@ public class bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        
+
+        if(collision.gameObject.tag == "target")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if(collision.gameObject.tag == "platform")
+        {
+            Destroy(gameObject);
+        }
     }
 }

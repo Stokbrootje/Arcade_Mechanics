@@ -19,17 +19,17 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
 
         {
-            transform.position += -transform.right * Time.deltaTime;
+            transform.position += -transform.right * Time.deltaTime * speed;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * Time.deltaTime;
+            transform.position += transform.right * Time.deltaTime * speed;
         }
 
         if (canJump == true && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector3(rb.velocity.x, 6, 0);
+            rb.velocity = new Vector3(rb.velocity.x, 12, 0);
             canJump = false;
         }
 
