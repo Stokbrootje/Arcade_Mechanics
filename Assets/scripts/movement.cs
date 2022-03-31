@@ -6,7 +6,7 @@ public class movement : MonoBehaviour
 {
     public Rigidbody rb;
     public bool canJump = false;
-    public float speed = 10;
+    public float speed = 15;
     
     void Start()
     {

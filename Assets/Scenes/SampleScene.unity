@@ -365,10 +365,10 @@ GameObject:
   - component: {fileID: 442141787}
   - component: {fileID: 442141791}
   - component: {fileID: 442141790}
-  - component: {fileID: 442141789}
   - component: {fileID: 442141788}
   - component: {fileID: 442141793}
   - component: {fileID: 442141792}
+  - component: {fileID: 442141789}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -405,8 +405,8 @@ MonoBehaviour:
   rb: {fileID: 442141793}
   canJump: 0
   speed: 3
---- !u!136 &442141789
-CapsuleCollider:
+--- !u!65 &442141789
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -415,9 +415,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &442141790
 MeshRenderer:
@@ -497,7 +496,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &613189337
 GameObject:
