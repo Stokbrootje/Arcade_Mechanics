@@ -18,4 +18,12 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = health;
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "target")
+        {
+            Destroy(gameObject);
+        }
+    } 
+
 }
