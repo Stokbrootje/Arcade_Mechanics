@@ -16,9 +16,13 @@ public class bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "breakableWall")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
 
-        if(collision.gameObject.tag == "target")
+        if (collision.gameObject.tag == "target")
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
