@@ -5,10 +5,15 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float life = 3;
+<<<<<<< HEAD
     public GameObject bulletPrefab;
     public GameObject target;
     public GameObject spawnPositions;
     public float speed = 1f;
+=======
+
+
+>>>>>>> 2173a334a6fd2f93928af5a5206ae5870ab0a980
 
     void Awake()
     {

@@ -19,14 +19,14 @@ public class movement : MonoBehaviour
     void Update()
     {
         float tempSpeed = 0;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.S))
 
         {
             transform.position += transform.right * Time.deltaTime * speed;
             tempSpeed -= Time.deltaTime * speed;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W))
         {
             transform.position += -transform.right * Time.deltaTime * speed;
             tempSpeed += Time.deltaTime * speed; 
