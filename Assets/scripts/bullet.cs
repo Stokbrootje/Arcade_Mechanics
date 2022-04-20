@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    public float life = 3;
-<<<<<<< HEAD
     public GameObject bulletPrefab;
-    public GameObject target;
     public GameObject spawnPositions;
+    public GameObject target;
     public float speed = 1f;
-=======
 
-
->>>>>>> 2173a334a6fd2f93928af5a5206ae5870ab0a980
-
-    void Awake()
-    {
-        Destroy(gameObject, life);
-    }
 
     private void Update()
     {
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.LookAt(target.transform);
-        StartCoroutine(SendHoming(bullet));
-    }    
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GameObject bullet = Instantiate(bulletPrefab, spawnPositions.transform.position, bulletPrefab.transform.rotation); 
+            bullet.transform.LookAt(target.transform);
+            StartCoroutine(SendHoming(bullet));
+        }
+    }
+
+    public IEnumerator SendHoming(GameObject bullet)
+    {
+        while (Vector3.Distance(bullet.transform.position, target.transform.position)>0.3f)
+        {
+            bullet.transform.position += (target.transform.position - bullet.transform.position).normalized * speed * Time.deltaTime;
+            bullet.transform.LookAt(target.transform);
+            yield return null;
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
