@@ -6,13 +6,21 @@ public class bullet : MonoBehaviour
 {
     public float life = 3;
     public GameObject bulletPrefab;
-
-
+    public GameObject target;
+    public GameObject spawnPositions;
+    public float speed = 1f;
 
     void Awake()
     {
         Destroy(gameObject, life);
     }
+
+    private void Update()
+    {
+        GameObject bullet = Instantiate(bulletPrefab);
+        bullet.transform.LookAt(target.transform);
+        StartCoroutine(SendHoming(bullet));
+    }    
 
     void OnCollisionEnter(Collision collision)
     {
