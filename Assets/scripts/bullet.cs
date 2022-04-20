@@ -5,7 +5,6 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float life = 3;
-    public GameObject bulletPrefab;
 
 
 
