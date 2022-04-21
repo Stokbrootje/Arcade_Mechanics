@@ -188,7 +188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7230426654882994148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -8.392399, y: 1.1233764, z: -0.7926426}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children:
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 3824965787268970596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 180}
 --- !u!54 &8216933690740663861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,9 +233,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7230426654882994148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47ea7aad7d1df83478c63e287fb64c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  bulletPrefab: {fileID: 7230426654882994148}
+  spawnPositions: {fileID: 919132149155446097, guid: 5dd3f6474cf54894b960bb114894cea3, type: 3}
+  target: {fileID: 919132149155446097, guid: 431851342b55aa346afa1822bff3bff6, type: 3}
+  speed: 1

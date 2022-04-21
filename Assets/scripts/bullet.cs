@@ -14,7 +14,7 @@ public class bullet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GameObject bullet = Instantiate(bulletPrefab, spawnPositions.transform.position, bulletPrefab.transform.rotation); 
+            GameObject bullet = Instantiate(bulletPrefab, spawnPositions.transform.position, bulletPrefab.transform.localRotation); 
             bullet.transform.LookAt(target.transform);
             StartCoroutine(SendHoming(bullet));
         }
